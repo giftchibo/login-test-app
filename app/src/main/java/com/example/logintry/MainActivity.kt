@@ -23,16 +23,24 @@ class MainActivity : AppCompatActivity() {
 
         // set on-click listener
         btn_submit.setOnClickListener {
-            val user_name = et_user_name.text;
-            val password = et_password.text;
-            Toast.makeText(this@MainActivity, user_name, Toast.LENGTH_LONG).show()
+            var user_name = et_user_name.text.toString()
+            val password = et_password.text.toString()
+            if (user_name == "gift" && password == "123") {
+                Toast.makeText(
+                    this@MainActivity,
+                    "welcome $user_name .Logged in sucuffully ",
+                    Toast.LENGTH_LONG
+                ).show()
 
-            // your code to validate the user_name and password combination
-            // and verify the same
+            } else {
+
+                Toast.makeText(this@MainActivity, "incorrect login", Toast.LENGTH_LONG).show()
+                // your code to validate the user_name and password combination
+                // and verify the same
+
+            }
+
 
         }
-
-
-
     }
 }
